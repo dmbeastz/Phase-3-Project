@@ -31,6 +31,8 @@ class CriminalRecord(Base):
     sentence = Column(String)
 
     person = relationship("Person", back_populates="criminal_records")
+    prisoners = relationship("Prisoner", back_populates="crime")  # Fix the relationship name
+
 
 class PoliceOfficer(Base):
     __tablename__ = 'police_officers'
@@ -75,4 +77,6 @@ class Prisoner(Base):
     prison_id = Column(Integer, ForeignKey('prisons.id'))
 
     person = relationship("Person", back_populates="prisoners")
+    crime = relationship("CriminalRecord", back_populates="prisoners")
+    
     prison = relationship("Prison", back_populates="prisoners")
