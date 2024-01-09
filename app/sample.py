@@ -1,4 +1,4 @@
-# sample data
+# sample data for the database
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Person, CriminalRecord, PoliceOfficer, CrimeScene, Prison, Prisoner

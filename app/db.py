@@ -1,5 +1,5 @@
 # db.py
-# To generate 
+# To generate the database
 from sqlalchemy import create_engine
 from models import Base
 
