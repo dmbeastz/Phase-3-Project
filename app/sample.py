@@ -3,9 +3,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Person, CriminalRecord, PoliceOfficer, CrimeScene, Prison, Prisoner
 from datetime import datetime, date
+import app.cli as cli 
 
 def seed_data():
-    import click
+    
     # Create an SQLite database engine
     engine = create_engine('sqlite:///criminal_database.db')
 
@@ -134,7 +135,7 @@ def seed_data():
     session.add_all([prisoner1, prisoner2])
     session.commit()
 
-    click.echo("Sample data added to the database.")
+    cli.echo("Sample data added to the database.")
 
 if __name__ == "__main__":
     seed_data()
